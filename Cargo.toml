@@ -8,6 +8,7 @@ bevy = "0.16.1"
 
 [dependencies]
 bevy = { workspace = true }
+camera = { path = "crates/camera" }
 
 [workspace]
 members = [ "crates/*" ]
