@@ -1,0 +1,14 @@
+[package]
+name = "space-sim"
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+bevy = "0.16.1"
+
+[dependencies]
+bevy = { workspace = true }
+
+[workspace]
+members = [ "crates/*" ]
+resolver = "2"
