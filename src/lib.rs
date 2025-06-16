@@ -31,7 +31,7 @@ impl Plugin for AppPlugin {
             TnuaAvian3dPlugin::new(FixedUpdate),
             EnhancedInputPlugin,
         ))
-        .add_plugins(player::plugin)
+        .add_plugins((player::plugin, part::plugin))
         .add_systems(Startup, setup);
     }
 }
@@ -41,5 +41,6 @@ fn setup(asset_server: Res<AssetServer>, mut commands: Commands) {
         SceneRoot(asset_server.load(GltfAssetLabel::Scene(0).from_asset("models/testlevel.glb"))),
         Collider::cuboid(10.0, 0.1, 10.0),
         RigidBody::Static,
+        Name::new("Level"),
     ));
 }

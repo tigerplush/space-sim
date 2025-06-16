@@ -51,6 +51,7 @@ fn setup(
             Player,
             Transform::from_xyz(0.0, 1.0, 0.0),
             Visibility::Inherited,
+            Name::new("Player"),
         ))
         .with_children(|parent| {
             // Spawn view model camera.
@@ -195,7 +196,7 @@ fn sync_camera(
     player: Single<&Transform, (With<Player>, Without<PlayerCamera>)>,
     mut player_camera_parent: Single<&mut Transform, With<PlayerCamera>>,
 ) {
-    const CAMERA_HEIGHT: f32 = 1.8;
+    const CAMERA_HEIGHT: f32 = 1.7;
     player_camera_parent.translation =
         player.translation + Vec3::Y * (CAMERA_HEIGHT - PLAYER_FLOAT_HEIGHT);
 }
